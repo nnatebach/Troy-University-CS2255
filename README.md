@@ -15,3 +15,7 @@ Data returned:
 
 - Disadvantage: Time-consuming for large array
 WHY? If the desired data is not in the array, the search has to check every element before it returns '-1'
+
+------ Binary Search ------
+- Advantage: More efficient algorithm for searching an array
+- Disadvantage: The data in the array MUST be ordered.
