@@ -32,7 +32,7 @@ int binarySearch(int array[], int numElems, int value) // function heading
 
   while(first <= last)
   {
-    middle = first + (last - first) / 2;
+    middle = first + (last - first) / 2; // determine the value in the middle of the array.
 
     if (array[middle] == value)
       return middle; // if value is in the middle => we are done.
