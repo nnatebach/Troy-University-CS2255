@@ -3,6 +3,7 @@ Data in:
   - List of values in an array.
   - The number of element in the array.
   - The value searched for in the array.<br />
+
 Data returned:
   - Position in the array of the value.
   - If value is NOT found, return -1
