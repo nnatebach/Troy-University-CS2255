@@ -9,8 +9,8 @@ Data returned:
 
 ------ Linear Search ------
 - Advantages:
-+ Simplicity
-+ The array does NOT have to be in any orders.
+  + Simplicity
+  + The array does NOT have to be in any orders.
 
 - Disadvantage: Time-consuming for large array
 WHY? If the desired data is not in the array, the search has to check every element before it returns '-1'
