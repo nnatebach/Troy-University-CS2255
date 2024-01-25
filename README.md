@@ -1,11 +1,11 @@
-Task: Search an array for a particular value
+Task: Search an array for a particular value.<br />
 Data in:
-- List of values in an array.
-- The number of element in the array.
-- The value searched for in the array.
+  - List of values in an array.
+  - The number of element in the array.
+  - The value searched for in the array.<br />
 Data returned:
-- Position in the array of the value.
-- If value is NOT found, return -1
+  - Position in the array of the value.
+  - If value is NOT found, return -1
 
 ------ Linear Search ------
 - Advantages:
