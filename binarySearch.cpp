@@ -4,11 +4,13 @@ using namespace std;
 
 int binarySearch(int [], int, int); // function prototype
 
-const int SIZE = 16;
+const int SIZE = 16; // number of element in the array
 
 int main() {
   int found, value;
-  int array[] = {34, 19, 19, 18, 17, 13, 12, 12, 12, 11, 9, 5, 3, 2, 2, 0}; // array to be searched
+  // value - the value searched for in the array
+// found - the position of the value in the array
+  int array[] = {34, 19, 19, 18, 17, 13, 12, 12, 12, 11, 9, 5, 3, 2, 2, 0}; // array to be searched - list of values in an array
 
   cout << "Enter an integer to search for: " << endl;
   cin >> value;
@@ -18,7 +20,7 @@ int main() {
   // on array looking for an occurrence of value
   if (found == -1)
     cout << "The value " << value << " is not in the list." << endl;
-  else {
+  else { // Position in the array of the value.
     cout << "The value " << value << " is at position number " << found + 1 << " of the list." << endl;
   }
   return 0;
