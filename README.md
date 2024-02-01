@@ -43,3 +43,9 @@ Advantage: Fairly simple<br />
 
 Disadvantage: Inefficient for large arrays<br />
 Reason: Data values only move one at a time.
+
+------ Selection Sort - selectionSortArray ------
+
+Task: to sort values of an array in ascending order
+Data in: the array, the array size
+Data out: the sorted array
