@@ -46,6 +46,6 @@ Reason: Data values only move one at a time.
 
 ------ Selection Sort - selectionSortArray ------
 
-Task: to sort values of an array in ascending order
-Data in: the array, the array size
+Task: to sort values of an array in ascending order<br />
+Data in: the array, the array size<br />
 Data out: the sorted array
