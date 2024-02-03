@@ -4,6 +4,8 @@ using namespace std;
 int main ()
 {
   int one = 10;
+  // The address of variable one is 006AFOF4 - given from the textbook
+
   int *ptr1; // ptr1 is a pointer variable that points to an int
 
   ptr1 = &one;
@@ -15,6 +17,11 @@ int main ()
   cout << "The value of &one is " << &one << endl << endl;
   cout << "The value of ptr1 is " << ptr1 << endl << endl;
   cout << "The value of *ptr1 is " << *ptr1 << endl << endl;
+
+  // The value of one is 10
+  // The value of &one is 0x7ff7b29776f8
+  // The value of ptr1 is 0x7ff7b29776f8
+  // The value of *ptr1 is 10
 
   return 0;
 }
