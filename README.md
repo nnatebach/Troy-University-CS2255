@@ -12,8 +12,8 @@ When we are more interested in the memory location pointed to by a pointer varia
 
 Ex:<br />
 cout << *ptr;<br />
-<!-- Since ptr is a pointer variable, * dereferences ptr -->
-<!-- The values stored at the location ptr points to will be printed -->
+// Since ptr is a pointer variable, * dereferences ptr<br />
+// The values stored at the location ptr points to will be printed<br />
 
 '&' and '*' are the opposites in many ways
 - '*' is used before a pointer variable to obtain actual data.
