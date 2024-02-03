@@ -4,7 +4,7 @@ using namespace std;
 int main ()
 {
   int one = 10;
-  // The address of variable one is 006AFOF4 - given from the textbook
+  // The address of variable one is 0x7ff7b29776f8 - given from the textbook
 
   int *ptr1; // ptr1 is a pointer variable that points to an int
 
@@ -22,6 +22,8 @@ int main ()
   // The value of &one is 0x7ff7b29776f8
   // The value of ptr1 is 0x7ff7b29776f8
   // The value of *ptr1 is 10
+
+  // NOTE: Different operating systems may give different addresses of variable
 
   return 0;
 }
