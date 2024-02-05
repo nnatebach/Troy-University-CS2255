@@ -34,13 +34,13 @@ int main ()
 
   cout << fixed << showpoint << setprecision(2);
 
-  cout << "Please enter the scores to be calculated " << endl;
+  cout << "How many test scores do you want?" << endl;
   cin >> numOfScores;
 
   while (numOfScores <= 0) // checks for a legal value
   {
-    cout << "A negative score is not acceptable. Please enter a different score \n";
-    cout << "How many scores will be calculated " << endl;
+    cout << "Negative amount is not acceptable. Please enter a different number\n";
+    cout << "How many test scores do you want?" << endl;
     cin >> numOfScores;
   };
 
@@ -60,9 +60,15 @@ int main ()
 
   for (count = 0; count < numOfScores; count++)
   {
-    cout << "Score " << (count + 1) << ": " << endl;
+    cout << "Score " << (count + 1) << ": ";
     cin >> scores[count];
-    totalScores = totalScores + scores[count];
+
+    while (scores[count] < 0)
+    {
+      cout << "Negative number is not accepted. Please enter a different number." << endl;
+      cin >> scores[count];
+    }
+  totalScores = totalScores + scores[count];
   }
 
   averageScores = totalScores / numOfScores;
@@ -102,7 +108,10 @@ void sortScores (float* scores, int numOfScores)
 // display the sorted scores array
 void displaySortedScores (float* scores, int numOfScores)
 {
+  cout << "The ascending order for the scores is " << endl;
   for (int count = 0; count < numOfScores; count++)
-    cout << scores[count] << " ";
+  {
+    cout << fixed << showpoint << setprecision(2) << scores[count] << " ";
+  }
   cout << endl;
 }
