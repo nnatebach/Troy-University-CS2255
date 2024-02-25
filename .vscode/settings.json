@@ -1,0 +1,9 @@
+{
+  "files.associations": {
+    "*.kit": "html",
+    "ostream": "cpp",
+    "iostream": "cpp",
+    "istream": "cpp",
+    "cctype": "cpp"
+  }
+}
