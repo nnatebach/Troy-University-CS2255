@@ -1,4 +1,5 @@
-// Sample Program 12.1
+// Sample Program 12.2
+// This is the Sample Program 12.1 without priming the read
 
 #include <fstream>
 #include <iostream>
@@ -23,6 +24,7 @@ int main () {
   int hours; // The number of hours worked
   float payRate; // The rate per hour paid
   float net; // The net pay
+  char ch; // ch is used to hold the next value (read as character)
 
   if (!infile) { // check to make sure that the physical file exists
     cout << "Error opening file.\n";
@@ -32,15 +34,13 @@ int main () {
   outfile << fixed << setprecision(2);
   outfile << "Hours     Pay Rate    Net Pay" << endl;
 
-  infile >> hours; // priming the read
-
-  while (!infile.eof()) {
+  while ((ch = infile.peek()) != EOF) {
+    infile >> hours;
     infile >> payRate;
     net = hours * payRate;
 
     outfile << hours << setw(10) << "$ " << setw(6) << payRate << setw(5) << "$ " << setw(7) << net << endl;
 
-    infile >> hours;
   }
 
   infile.close();
