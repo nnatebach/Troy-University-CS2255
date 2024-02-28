@@ -34,7 +34,7 @@ int main () {
 
   infile >> hours; // priming the read
 
-  while (infile) {
+  while (!infile.eof()) {
     infile >> payRate;
     net = hours * payRate;
 
