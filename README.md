@@ -20,8 +20,8 @@ dataFile.close();<br />
 <br />
 ====== CLOSING A FILE ======
 <br />
-- ios::in - Input mode. The file is used for "reading" information. If the file does not exist, it will not be created.
-- ios::out - Output mode. Information is written to the file. If the file already exists, its content will be deleted.
-- ios::app - Append mode. If the file exists, its contents are preserved and all output is written to the end of the file. If it does not exist then the file will be created. This is different from "ios::out"
-- ios::binary - Binary mode. Information is written to or read from in pure binary format
+- ios::in - Input mode. The file is used for "reading" information. If the file does not exist, it will not be created.<br />
+- ios::out - Output mode. Information is written to the file. If the file already exists, its content will be deleted.<br />
+- ios::app - Append mode. If the file exists, its contents are preserved and all output is written to the end of the file. If it does not exist then the file will be created. This is different from "ios::out".<br />
+- ios::binary - Binary mode. Information is written to or read from in pure binary format.
 <br />
