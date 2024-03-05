@@ -13,7 +13,7 @@ class Rectangle // Rectangle is the name of the class (its identity)
     // Usually member functions are defined public
     // and are to describe what the class can do
 
-    void setLength(float side_1);
+    void setLength(float side_l);
     // This member function receives
     // the length of the Rectangle object that calls it
     // and places that value in the member data called length.
@@ -81,4 +81,29 @@ int main () {
   cout << "The perimeter of box2 is " << box2.findPerimeter() << endl;
 
   return 0;
+}
+
+// Implementation file
+void Rectangle::setLength (float side_l) {
+  length = side_l;
+}
+
+void Rectangle::setWidth (float side_w) {
+  width = side_w;
+}
+
+float Rectangle::getLength () {
+  return length;
+}
+
+float Rectangle::getWidth () {
+  return width;
+}
+
+double Rectangle::findArea () {
+  return length * width;
+}
+
+double Rectangle::findPerimeter () {
+  return ((2 * length) + (2 * width));
 }
