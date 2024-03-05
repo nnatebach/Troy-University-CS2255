@@ -12,31 +12,28 @@ class Employee {
 
   public:
     // Constructor for employee's name, ID, department and position
-    Employee(string employeeName = "", int employeeIdNumber = 0, string employeeDepartment = "", string employeePosition = "")
-    {
-      name = employeeName;
-      idNumber = employeeIdNumber;
-      department = employeeDepartment;
-      position = employeePosition;
+    Employee(string name = "", int idNumber = 0, string department = "", string position = "") {
+      this->name = name;
+      this->idNumber = idNumber;
+      this->department = department;
+      this->position = position;
     }
 
-  // Constructor for employee's name and ID
-  Employee(string employeeName, int employeeIdNumber)
-  {
-    name = employeeName;
-    idNumber = employeeIdNumber;
-    department = "";
-    position = "";
-  }
+    // Constructor for employee's name and ID
+    Employee(string name, int idNumber) {
+      this->name = name;
+      this->idNumber = idNumber;
+      this->department = "";
+      this->position = "";
+    }
 
-  // Default constructor
-  Employee()
-  {
-    name = "";
-    idNumber = 0;
-    department = "";
-    position = "";
-  }
+    // Default constructor
+    Employee() {
+      this->name = "";
+      this->idNumber = 0;
+      this->department = "";
+      this->position = "";
+    }
 
   // Accessor functions to return values in the member variables
   const string getName() {
