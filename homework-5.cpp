@@ -35,46 +35,44 @@ class Employee {
       this->position = "";
     }
 
-  // Accessor functions to return values in the member variables
-  const string getName() {
-    return name;
-  }
-  const int getIdNumber() {
-    return idNumber;
-  }
-  const string getDepartment() {
-    return department;
-  }
-  const string getPosition() {
-    return position;
-  }
+    // Mutator functions to store values in the member variables
+    void setName(string employeeName) {
+      this->name = employeeName;
+    }
+    void setIdNumber(int employeeId) {
+      this->idNumber = employeeId;
+    }
+    void setDepartment(string employeeDepartment) {
+      this->department = employeeDepartment;
+    }
+    void setPosition(string employeePosition) {
+      this->position = employeePosition;
+    }
 
-  // Mutator functions to store values in the member variables
-  void setName(string employeeName) {
-    name = employeeName;
-  }
-  void setIdNumber(int employeeIdNumber) {
-    idNumber = employeeIdNumber;
-  }
-  void setDepartment(string employeeDepartment) {
-    department = employeeDepartment;
-  }
-  void setPosition(string employeePosition) {
-    position = employeePosition;
-  }
+    // Accessor functions to return values in the member variables
+    const string getName() {
+      return name;
+    }
+    const int getIdNumber() {
+      return idNumber;
+    }
+    const string getDepartment() {
+      return department;
+    }
+    const string getPosition() {
+      return position;
+    }
 
-  // Function to display employee data
-  void displayEmployee()
-  {
-    cout << "Name: " << name << endl;
-    cout << "ID Number: " << idNumber << endl;
-    cout << "Department: " << department << endl;
-    cout << "Position: " << position << endl;
-  }
+    // Functions to display employee data
+    void displayEmployee () {
+      cout << "Name: " << name << endl;
+      cout << "ID Number: " << idNumber << endl;
+      cout << "Department: " << department << endl;
+      cout << "Position: " << position << endl;
+    }
 };
 
-int main()
-{
+int main () {
   // Create three Employee objects
   Employee employee1 ("Susan Meyers", 47899, "Accounting", "Vice President");
   Employee employee2 ("Mark Jones", 39119, "IT", "Programmer");
