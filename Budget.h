@@ -1,4 +1,4 @@
-// Version 1
+// Version 2
 
 #ifndef BUDGET_H
 #define BUDGET_H
@@ -22,9 +22,8 @@ class Budget {
 
     double getCorpBudget() const
       { return corpBudget; }
-};
 
-// Definition of static member variable corpBudget
-double Budget::corpBudget = 0;
+    static void mainOffice(double); // Static member function
+};
 
 #endif

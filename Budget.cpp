@@ -7,10 +7,17 @@ using namespace std;
 
 int main () {
   int count; // Loop counter
+  double mainOfficeRequest; // Main office budget request
   const int NUM_DIVISIONS = 4; // Number of divisions
-  Budget divisions[NUM_DIVISIONS]; // Array of Budget objects
 
-  // Get the budget requests for each division.
+  // Get the main office's budget request
+  // Note that no instances of the Budget class have been defined.
+  cout << "Enter the main office's budget request: ";
+  cin >> mainOfficeRequest;
+  Budget::mainOffice(mainOfficeRequest);
+  Budget divisions[NUM_DIVISIONS]; // An array of Budget objects
+
+  // Get the budget requests for each division
   for (count = 0; count < NUM_DIVISIONS; count++) {
     double budgetAmount;
     cout << "Enter the budget request for division ";
