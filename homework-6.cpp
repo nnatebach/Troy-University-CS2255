@@ -13,7 +13,7 @@ string Numbers::tens[10] = {
 string Numbers::hundred = "hundred";
 string Numbers::thousand = "thousand";
 
-// Constructor
+// Constructor initializes the number member variable of the Numbers class
 Numbers::Numbers(int num) : number(num) {}
 
 // Print English description of the number
@@ -31,6 +31,9 @@ void Numbers::print () {
   if (number >= 100) {
     result += lessThan20[number / 100] + " " + hundred + " ";
     number %= 100;
+    if (number > 0) {
+      result += "and "; // Add "and" if there's a value after the hundred
+    }
   }
   if (number >= 20) {
     result += tens[number / 10 - 2] + " ";
@@ -44,21 +47,26 @@ void Numbers::print () {
 
 int main () {
   int inputNumber;
-  cout << "Enter a number between 0 and 9999: ";
-  cin >> inputNumber;
+  cout << "This program translates whole dollar amounts into words for the purpose of writing checks." << endl;
+  cout << "Entering a negative number terminates the program." << endl;
+  cout << "Enter an amount to be translated into words:\n";
+  do {
+    cin >> inputNumber;
 
-  // Validate input
-  if (inputNumber < 0 || inputNumber > 9999) {
-    cerr << "Invalid input! Please enter a number between 0 and 9999." << endl;
-    return 1;
-  }
+    // Validate input
+    if (inputNumber < 0 || inputNumber > 9999) {
+      cout << "Program terminated." << endl;
+      break;
+    }
 
-  // Create Numbers object
-  Numbers num(inputNumber);
+    // Create Numbers object
+    Numbers num(inputNumber);
 
-  // Print English description of the number
-  cout << "English description: ";
-  num.print();
+    // Print English description of the number
+    cout << "English description:\n";
+    num.print();
+    cout << "Enter another number <0-9999> or enter a negative number to terminate the program" << endl;
+  } while (true);
 
   return 0;
 }
