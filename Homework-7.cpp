@@ -7,20 +7,20 @@ using namespace std;
 // Employee Class
 class Employee {
 	private:
-		string name;
+		string employeeName;
 		int employeeNumber;
 		string hireDate;
 
 	public:
 		// Default constructor
 		Employee() {}
-		// Constructor for initializing name, employeeNumber, hireDate
-		Employee(const string &name, int employeeNumber, const string &hireDate)
-				: name(name), employeeNumber(employeeNumber), hireDate(hireDate) {}
+		// Constructor for initializing employeeName, employeeNumber, hireDate
+		Employee(const string &employeeName, int employeeNumber, const string &hireDate)
+				: employeeName(employeeName), employeeNumber(employeeNumber), hireDate(hireDate) {}
 
 		// Accessor functions
-		string getName() const {
-			return name;
+		string getEmployeeName() const {
+			return employeeName;
 		}
 		int getEmployeeNumber() const {
 			return employeeNumber;
@@ -30,8 +30,8 @@ class Employee {
 		}
 
 		// Mutator functions
-		void setName (const string &name) {
-			this->name = name;
+		void setEmployeeName (const string &employeeName) {
+			this->employeeName = employeeName;
 		}
 		void setEmployeeNumber (int employeeNumber) {
 			this->employeeNumber = employeeNumber;
@@ -49,10 +49,20 @@ class ProductionWorker : public Employee {
 		double hourlyPayRate;
 
 	public:
-		// Constructors
+		// Default Constructor
 		ProductionWorker() {}
-		ProductionWorker(const string &name, int employeeNumber, const string &hireDate, const string &shift, int shiftNumber, double hourlyPayRate)
-				: Employee(name, employeeNumber, hireDate), shift(shift), shiftNumber(shiftNumber), hourlyPayRate(hourlyPayRate) {}
+		// Constructor for initializing employeeName, employeeNumber, hireDate, shiftNumber, hourlyPayRate
+		ProductionWorker (const string &employeeName, int employeeNumber, const string &hireDate, int shiftNumber, double hourlyPayRate)
+				: Employee(employeeName, employeeNumber, hireDate), shiftNumber(shiftNumber), hourlyPayRate(hourlyPayRate) {
+			// The time of "shift" is based on "shiftNumber"
+			if (shiftNumber == 1) {
+				shift = "Day";
+			} else if (shiftNumber == 2) {
+				shift = "Night";
+			} else {
+				shift = "Unknown";
+			}
+		}
 
 		// Accessor functions
 		string getShift() const {
@@ -66,28 +76,39 @@ class ProductionWorker : public Employee {
 		}
 
 		// Mutator functions
-		void setShift (const string &shift) {
-			this->shift = shift;
-		}
 		void setShiftNumber (int shiftNumber) {
 			this->shiftNumber = shiftNumber;
+			// The time of "shift" is based on "shiftNumber"
+			if (shiftNumber == 1) {
+				shift = "Day";
+			} else if (shiftNumber == 2) {
+				shift = "Night";
+			} else {
+				shift = "Unknown";
+			}
 		}
-		void setHourlyPayRate(double hourlyPayRate) {
+		void setHourlyPayRate (double hourlyPayRate) {
 			this->hourlyPayRate = hourlyPayRate;
 		}
 };
 
 int main() {
 	// Create a ProductionWorker object
-	ProductionWorker worker("John Jones", 123, "2006-1-1", "Day", 1, 15.50);
+	ProductionWorker worker("John Jones", 123, "1/1/2006", 2, 18.00);
+	// The fourth argument is for the "Shift Number"
+	// 1 is for "Day"
+	// 2 is for "Night"
 
 	// Display employee information
-	cout << "Employee Name: " << worker.getName() << endl;
+	cout << "Employee Name: " << worker.getEmployeeName() << endl;
 	cout << "Employee Number: " << worker.getEmployeeNumber() << endl;
 	cout << "Hire Date: " << worker.getHireDate() << endl;
 	cout << "Shift: " << worker.getShift() << endl;
 	cout << "Shift Number: " << worker.getShiftNumber() << endl;
 	cout << "Hourly Pay Rate: $" << fixed << setprecision(2) << worker.getHourlyPayRate() << endl;
+	cout << "Press any key to continue . . ." << endl;
+	// wait for user input
+	getchar();
 
 	return 0;
 }

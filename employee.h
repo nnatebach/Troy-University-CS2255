@@ -7,44 +7,46 @@
 using namespace std;
 
 class Employee {
-private:
-    string name;
+	private:
+    string employeeName;
     int employeeNumber;
     string hireDate;
 
-public:
-    // Constructors
+	public:
+    // Default constructor
     Employee();
-    Employee(const string &name, int employeeNumber, const string &hireDate);
+		// Constructor for initializing employeeName, employeeNumber and hireDate
+    Employee(const string &employeeName, int employeeNumber, const string &hireDate);
 
     // Accessor functions
-    string getName() const;
+    string getEmployeeName() const;
     int getEmployeeNumber() const;
     string getHireDate() const;
 
     // Mutator functions
-    void setName(const string &name);
-    void setEmployeeNumber(int employeeNumber);
-    void setHireDate(const string &hireDate);
+    void setEmployeeName (const string &employeeName);
+    void setEmployeeNumber (int employeeNumber);
+    void setHireDate (const string &hireDate);
 };
 
 class ProductionWorker : public Employee {
-private:
+	private:
     int shift;
     double hourlyPayRate;
 
-public:
-    // Constructors
+	public:
+    // Default constructor
     ProductionWorker();
-    ProductionWorker(const string &name, int employeeNumber, const string &hireDate, int shift, double hourlyPayRate);
+		// Constructor for initializing employeeName, employeeNumber, hireDate, shift and hourlyPayRate
+    ProductionWorker(const string &employeeName, int employeeNumber, const string &hireDate, int shift, double hourlyPayRate);
 
     // Accessor functions
     int getShift() const;
     double getHourlyPayRate() const;
 
     // Mutator functions
-    void setShift(int shift);
-    void setHourlyPayRate(double hourlyPayRate);
+    void setShift (int shift);
+    void setHourlyPayRate (double hourlyPayRate);
 };
 
 #endif // EMPLOYEE_H
