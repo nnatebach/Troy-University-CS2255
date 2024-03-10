@@ -1,61 +1,93 @@
 #include <iostream>
+#include <iomanip>
 #include <string>
 
 using namespace std;
 
+// Employee Class
 class Employee {
-private:
-    string name;
-    int employeeNumber;
-    string hireDate;
+	private:
+		string name;
+		int employeeNumber;
+		string hireDate;
 
-public:
-    // Constructors
-    Employee() {}
-    Employee(const string &name, int employeeNumber, const string &hireDate)
-        : name(name), employeeNumber(employeeNumber), hireDate(hireDate) {}
+	public:
+		// Default constructor
+		Employee() {}
+		// Constructor for initializing name, employeeNumber, hireDate
+		Employee(const string &name, int employeeNumber, const string &hireDate)
+				: name(name), employeeNumber(employeeNumber), hireDate(hireDate) {}
 
-    // Accessor functions
-    string getName() const { return name; }
-    int getEmployeeNumber() const { return employeeNumber; }
-    string getHireDate() const { return hireDate; }
+		// Accessor functions
+		string getName() const {
+			return name;
+		}
+		int getEmployeeNumber() const {
+			return employeeNumber;
+		}
+		string getHireDate() const {
+			return hireDate;
+		}
 
-    // Mutator functions
-    void setName(const string &name) { this->name = name; }
-    void setEmployeeNumber(int employeeNumber) { this->employeeNumber = employeeNumber; }
-    void setHireDate(const string &hireDate) { this->hireDate = hireDate; }
+		// Mutator functions
+		void setName (const string &name) {
+			this->name = name;
+		}
+		void setEmployeeNumber (int employeeNumber) {
+			this->employeeNumber = employeeNumber;
+		}
+		void setHireDate (const string &hireDate) {
+			this->hireDate = hireDate;
+		}
 };
 
+// ProductionWorker Class
 class ProductionWorker : public Employee {
-private:
-    int shift;
-    double hourlyPayRate;
+	private:
+		string shift;
+		int shiftNumber;
+		double hourlyPayRate;
 
-public:
-    // Constructors
-    ProductionWorker() {}
-    ProductionWorker(const string &name, int employeeNumber, const string &hireDate, int shift, double hourlyPayRate)
-        : Employee(name, employeeNumber, hireDate), shift(shift), hourlyPayRate(hourlyPayRate) {}
+	public:
+		// Constructors
+		ProductionWorker() {}
+		ProductionWorker(const string &name, int employeeNumber, const string &hireDate, const string &shift, int shiftNumber, double hourlyPayRate)
+				: Employee(name, employeeNumber, hireDate), shift(shift), shiftNumber(shiftNumber), hourlyPayRate(hourlyPayRate) {}
 
-    // Accessor functions
-    int getShift() const { return shift; }
-    double getHourlyPayRate() const { return hourlyPayRate; }
+		// Accessor functions
+		string getShift() const {
+			return shift;
+		}
+		int getShiftNumber() const {
+			return shiftNumber;
+		}
+		double getHourlyPayRate() const {
+			return hourlyPayRate;
+		}
 
-    // Mutator functions
-    void setShift(int shift) { this->shift = shift; }
-    void setHourlyPayRate(double hourlyPayRate) { this->hourlyPayRate = hourlyPayRate; }
+		// Mutator functions
+		void setShift (const string &shift) {
+			this->shift = shift;
+		}
+		void setShiftNumber (int shiftNumber) {
+			this->shiftNumber = shiftNumber;
+		}
+		void setHourlyPayRate(double hourlyPayRate) {
+			this->hourlyPayRate = hourlyPayRate;
+		}
 };
 
 int main() {
-    // Create a ProductionWorker object
-    ProductionWorker worker("John Doe", 12345, "2024-03-10", 1, 15.50);
+	// Create a ProductionWorker object
+	ProductionWorker worker("John Jones", 123, "2006-1-1", "Day", 1, 15.50);
 
-    // Display employee information
-    cout << "Employee Name: " << worker.getName() << endl;
-    cout << "Employee Number: " << worker.getEmployeeNumber() << endl;
-    cout << "Hire Date: " << worker.getHireDate() << endl;
-    cout << "Shift: " << worker.getShift() << endl;
-    cout << "Hourly Pay Rate: $" << worker.getHourlyPayRate() << endl;
+	// Display employee information
+	cout << "Employee Name: " << worker.getName() << endl;
+	cout << "Employee Number: " << worker.getEmployeeNumber() << endl;
+	cout << "Hire Date: " << worker.getHireDate() << endl;
+	cout << "Shift: " << worker.getShift() << endl;
+	cout << "Shift Number: " << worker.getShiftNumber() << endl;
+	cout << "Hourly Pay Rate: $" << fixed << setprecision(2) << worker.getHourlyPayRate() << endl;
 
-    return 0;
+	return 0;
 }
